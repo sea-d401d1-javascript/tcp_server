@@ -16,5 +16,3 @@ var start = exports.start = function(filepath) {
     console.log('server running on port 3000...');
   });
 };
-
-// module.exports = server;

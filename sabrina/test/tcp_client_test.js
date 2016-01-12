@@ -20,26 +20,21 @@ describe('the tcp server', function() {
   });
 });
 
-// describe('the functionHandler.writeFile function', function() {
-//   before(function(done) {
-//     var filenameTest = Math.random().toString() + '.txt';
-//     var dataTest = 'Data test.';
-//     fs.writeFile(filenameTest, dataTest, 'utf8', (err) => {
-//       if (err) throw err;
-//       console.log('File name: ' + filename);
-//       console.log(response);
-//       return console.log('File written!');
-//     });
-//     done();
-//   });
-//
-//   it('should create a new file with a unique name', function() {
-//     console.log('./' + filenameTest);
-//     var createdNewFile = fs.statSync('./' + filenameTest).isFile();
-//     expect(createdNewFile).to.eql(true);
-//   });
-//
-//   it('should write the data received', function(done) {
-//     console.log('yes');
-//   });
-// });
+describe('the functionHandler.writeFile function', function() {
+  before(function(done) {
+    var filenameTest = Math.random().toString() + '.txt';
+    var dataTest = 'Data test.';
+    functionHandler.writeFile(filenameTest, dataTest);
+    done();
+  });
+
+  it('should create a new file with a unique name', function() {
+    console.log('./' + filenameTest);
+    var createdNewFile = fs.statSync('./' + filenameTest).isFile();
+    expect(createdNewFile).to.eql(true);
+  });
+
+  it('should write the data received', function(done) {
+    console.log('yes');
+  });
+});

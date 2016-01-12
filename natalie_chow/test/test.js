@@ -39,20 +39,15 @@ describe('TCP server', function() {
   });
 
   it('should write request to newly created text file', function(done) {
-    // no file before
-    // fs.access(filepath, fs.F_OK, function(err) {
-    //   expect(err).to.exist;
-    // });
-    // read file after
-      fs.readFile(filepath, function(err, data) {
-        if (err) {
-          expect(true).to.eql(false);
-          console.log(err);
-          return done();
-        }
-        expect(data.toString()).to.eql(requestString);
-        done();
-      });
+    fs.readFile(filepath, function(err, data) {
+      if (err) {
+        expect(true).to.eql(false);
+        console.log(err);
+        return done();
+      }
+      expect(data.toString()).to.eql(requestString);
+      done();
+    });
   });
 
   after(function() {

@@ -2,15 +2,17 @@ var net = require('net');
 var fs = require('fs');
 // const generator = require('f-generator');
 
-var server = net.createServer((socket) => {
+var server = module.exports = exports = net.createServer((socket) => {
+  var requestTime = new Date();
   console.log('Server request');
   socket.on('data', function(data) {
-    fs.writeFile('uniqfile ' + new Date().toString(), data.toString());
+    fs.writeFile('uniqfile ' + requestTime.toString(), data.toString());
     socket.write('Written for test');
   });
 
   // console.log(socket.destroyed);
   socket.pipe(socket);
+  socket.write(requestTime.toString());
 
   socket.on('end', function() {
     console.log('server disconnected');

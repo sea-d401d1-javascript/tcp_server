@@ -4,6 +4,7 @@ var fs = require('fs');
 var server = net.createServer(function(socket) {
   var newFile = fs.createWriteStream('./logs/' + new Date() + '.txt');
   socket.pipe(newFile);
+  socket.end();
 
   console.log("received request");
 

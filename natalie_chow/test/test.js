@@ -24,29 +24,27 @@ describe('Identifier generate function', function() {
 
 describe('TCP server', function() {
   var requestString = 'Hello World\r\n';
+  var filepath = __dirname + '/../log_test.txt';
 
-  before(function() {
-    server.start('/log_test.txt');
+  before(function(done) {
+    server.start(filepath);
     var client = net.createConnection(3000, function() {
       console.log('Connected to server');
       client.write(requestString);
     });
-  });
-
-  after(function() {
-    fs.unlink(__dirname + '/../log_test.txt', function(err) {
-      if (err) console.log(err);
+    client.on('data', function(data) {
+      client.end();
+      done();
     });
   });
 
   it('should write request to newly created text file', function(done) {
     // no file before
-    fs.access(__dirname + '/../log_test.txt', fs.F_OK, function(err) {
-      expect(err).to.exist;
-    });
-
-    var readFile = function() {
-      fs.readFile(__dirname + '/../log_test.txt', function(err, data) {
+    // fs.access(filepath, fs.F_OK, function(err) {
+    //   expect(err).to.exist;
+    // });
+    // read file after
+      fs.readFile(filepath, function(err, data) {
         if (err) {
           expect(true).to.eql(false);
           console.log(err);
@@ -55,7 +53,11 @@ describe('TCP server', function() {
         expect(data.toString()).to.eql(requestString);
         done();
       });
-    };
-    setTimeout(readFile, 500);
+  });
+
+  after(function() {
+    fs.unlink(filepath, function(err) {
+      if (err) console.log(err);
+    });
   });
 });

@@ -1,4 +1,3 @@
-const net = require('net');
 const fs = require('fs');
 
 exports.writeFile = function(filename, response) {

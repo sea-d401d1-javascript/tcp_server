@@ -3,7 +3,6 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const request = require('superagent');
 const fs = require('fs');
-const tcpClient = require(__dirname + '/../tcp_client.js');
 const functionHandler = require(__dirname + '/../functionHandler.js');
 
 chai.use(chaiHttp);
@@ -12,7 +11,7 @@ describe('the tcp server', function() {
   it('should create a socket and receive a response', function(done) {
     chai.request('http://localhost:3000')
       .get('/')
-      .end(function (err, res) {
+      .end(function(err, res) {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
       });

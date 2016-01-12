@@ -1,22 +1,18 @@
 const net = require('net');
-const fs = require('fs');
+const functionHandler = require(__dirname + '/functionHandler.js');
 
 var response;
-var pathname = (new Date().toISOString()) + '.txt';
+var filename = (new Date().toISOString()) + '.txt';
 
 const client = net.createServer((socket) => {
   socket.on('data', function(data) {
     response = data.toString();
-
-    fs.writeFile(pathname, response, 'utf8', (err) => {
-      if (err) throw err;
-      console.log(pathname);
-      console.log(response);
-      console.log('File written!');
-    });
+    functionHandler.writeFile(filename, response);
   });
 
-  socket.end('Data collected! Socket closed!');
+  socket.end('Data collected at ' + filename + '\nSocket closed!');
+
+  client.close('Server finished!');
 });
 
 client.listen(3000, function() {

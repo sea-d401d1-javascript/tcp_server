@@ -1,0 +1,37 @@
+{
+  "name": "chris_lee",
+  "version": "1.0.0",
+  "description": "simple tcp server that logs requests in a text file",
+  "main": "tcp_server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai-http": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eslint": "^1.10.3",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clee46/tcp_server.git"
+  },
+  "keywords": [
+    "tcp",
+    "server"
+  ],
+  "author": "Chris Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clee46/tcp_server/issues"
+  },
+  "homepage": "https://github.com/clee46/tcp_server#readme"
+}

@@ -1,23 +1,8 @@
 const expect = require('chai').expect;
 const chai = require('chai');
-const chaiHttp = require('chai-http');
 const request = require('superagent');
 const fs = require('fs');
 const functionHandler = require(__dirname + '/../functionHandler.js');
-
-chai.use(chaiHttp);
-
-describe('the tcp server', function() {
-  it('should create a socket and receive a response', function(done) {
-    chai.request('http://localhost:3000')
-      .get('/')
-      .end(function(err, res) {
-        expect(err).to.be.null;
-        expect(res).to.have.status(200);
-      });
-    done();
-  });
-});
 
 describe('the functionHandler.writeFile function', function() {
   var filenameTest = Math.random().toString() + '.txt';

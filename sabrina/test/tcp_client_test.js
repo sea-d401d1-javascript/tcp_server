@@ -9,7 +9,7 @@ const functionHandler = require(__dirname + '/../functionHandler.js');
 chai.use(chaiHttp);
 
 describe('the tcp server', function() {
-  it('should create a socket and receive data', function(done) {
+  it('should create a socket and receive a response', function(done) {
     chai.request('http://localhost:3000')
       .get('/')
       .end(function (err, res) {

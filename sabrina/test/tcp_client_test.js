@@ -21,9 +21,10 @@ describe('the tcp server', function() {
 });
 
 describe('the functionHandler.writeFile function', function() {
+  var filenameTest = Math.random().toString() + '.txt';
+  var dataTest = 'Data test.';
+
   before(function(done) {
-    var filenameTest = Math.random().toString() + '.txt';
-    var dataTest = 'Data test.';
     functionHandler.writeFile(filenameTest, dataTest);
     done();
   });
@@ -35,6 +36,12 @@ describe('the functionHandler.writeFile function', function() {
   });
 
   it('should write the data received', function(done) {
-    console.log('yes');
+    var finalData;
+    fs.readFile(('./' + filenameTest), (err, data) => {
+      if (err) throw err;
+      finalData = data.toString();
+      expect(finalData).to.eql(dataTest);
+      done();
+    });
   });
 });

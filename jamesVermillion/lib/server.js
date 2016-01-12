@@ -2,9 +2,6 @@ module.exports = function(){
   const net = require('net');
   const fs = require('fs');
   var unique;
-  
-  var list = fs.readdirSync( __dirname +'/../requests/');
-  originalCount = list.length;
 
   var server = net.createServer((socket) => {
     socket.pipe(process.stdout);

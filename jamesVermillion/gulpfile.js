@@ -48,4 +48,4 @@ gulp.task('watch', function() {
   return gulp.watch(files, ['lint', 'mocha']);
 });
 
-gulp.task('default', ['lint', 'mocha']);
+gulp.task('default', ['watch','lint', 'mocha']);

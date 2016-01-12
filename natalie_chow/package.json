@@ -2,7 +2,7 @@
   "name": "tcp_server",
   "version": "1.0.0",
   "description": "A simple tcp logging server that receives tcp requests and save them to a file.",
-  "main": "server.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },

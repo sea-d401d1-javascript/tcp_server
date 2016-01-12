@@ -1,0 +1,28 @@
+{
+  "name": "tcp_server",
+  "version": "1.0.0",
+  "description": "A simple tcp logging server that receives tcp requests and save them to a file.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha test -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxnatc/tcp_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xxnatc/tcp_server/issues"
+  },
+  "homepage": "https://github.com/xxnatc/tcp_server#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-mocha": "^2.2.0"
+  }
+}

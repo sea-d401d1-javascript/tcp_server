@@ -1,0 +1,26 @@
+{
+  "name": "miranda-raymond",
+  "version": "1.0.0",
+  "description": "basic tcp server",
+  "main": "tcpserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tcp",
+    "server"
+  ],
+  "author": "Miranda Raymond",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "^2.3.4",
+    "superagent": "^1.6.1"
+  }
+}

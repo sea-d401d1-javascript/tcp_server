@@ -5,7 +5,7 @@ var count = 0;
 
 var tcpServer = net.createServer( (socket) => {
 	var time = new Date();
-	var file = fs.createWriteStream(__dirname + '/log/' + 0);
+	var file = fs.createWriteStream(__dirname + '/log/' + time);
 	count++;
 	socket.pipe(file);
 	socket.write(time.toString());

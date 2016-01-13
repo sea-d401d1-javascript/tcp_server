@@ -1,0 +1,4 @@
+package.json
+*.log
+**/*.log
+node_modules

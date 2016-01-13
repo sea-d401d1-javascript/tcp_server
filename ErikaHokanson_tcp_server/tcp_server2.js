@@ -1,12 +1,16 @@
 var net = require('net');
 var fs = require('fs');
 
-var server = net.createServer(function(socket) {
+var server = module.exports = net.createServer(function(socket) {
 
-  /*Will make a new file each time*/
-  var createWriteStream = fs.createWriteStream(__dirname + '/folder/thing' + Date.now() + '.log');
+/*Will make a new file each time*/
+var createWriteStream = fs.createWriteStream(__dirname + '/folder/thing' + Date.now() + '.log');
 
 socket.pipe(createWriteStream);
+
+socket.on('data', function() {
+  console.log('Data working');
+});
 
 socket.on('err', function() {
   if(err)console.log(err);

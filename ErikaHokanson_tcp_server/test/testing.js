@@ -2,18 +2,18 @@ var mocha = require('mocha');
 var expect = require('chai').expect;
 var net = require('net');
 var fs = require('fs');
+var server = require(__dirname + '/../tcp_server2.js');
 
 // Done tells it to stop the async process
 describe('tcpServer', function() {
-  it('output data to TCP server', function(done) {
-    require(__dirname + '/../tcp_server2.js');
-    var socket = net.connect(3000);
+  it('should output data', function(done) {
+    // var socket = net.connect(3000);
 
+// Callback below gives you an array of all the files
     server.on('finished', function() {
         fs.readdir(__dirname + '/../folder', function (err, files) {
-          var logFiles = [];
-
-// -4 collects .log: 4 characters
+        var logFiles = [];
+// -4 collects .log: 4 characters. Negative number starts 4 back from the end.
           files.forEach(function(currentValue) {
             if (currentValue.slice(-4) === '.log') logFiles.push(currentValue);
           });

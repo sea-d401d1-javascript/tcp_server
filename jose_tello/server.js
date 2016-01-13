@@ -6,7 +6,7 @@ var port = 3000,
     host = '127.0.0.1',
     now  = moment();
 
-var server = net.createServer((socket) => {
+var server = module.exports = exports = net.createServer((socket) => {
   console.log('Connected: ' + socket.remoteAddress + ': ' + socket.remotePort);
   socket.on('data', function(data) {
     console.log('Data: ' + socket.remoteAddress + ': ' + data);
@@ -14,7 +14,7 @@ var server = net.createServer((socket) => {
     fs.writeFile(timeStamp, data, (err) => {
       if (err) return 'Error.'
       console.log('File saved.');
-    })
+    });
   });
   socket.end();
 }).listen(port, host);

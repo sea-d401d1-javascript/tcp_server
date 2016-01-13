@@ -1,0 +1,17 @@
+{
+  "name": "yueyueqin",
+  "version": "1.0.0",
+  "description": "\"This is project to create tcp server and pipe socket into file regarding response from request\"",
+  "main": "tcp_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yueyue Qin",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.3.4"
+  }
+}

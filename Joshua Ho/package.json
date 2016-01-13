@@ -1,0 +1,23 @@
+{
+  "name": "udp-server",
+  "version": "1.0.0",
+  "description": "week 2 assignment 1 - UDP Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricecreamdude/udp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricecreamdude/udp-server/issues"
+  },
+  "homepage": "https://github.com/ricecreamdude/udp-server#readme",
+  "devDependencies": {
+    "chai": "^3.4.1"
+  }
+}

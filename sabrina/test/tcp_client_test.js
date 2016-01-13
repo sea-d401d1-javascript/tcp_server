@@ -1,6 +1,6 @@
+const net = require('net');
 const expect = require('chai').expect;
 const chai = require('chai');
-const request = require('superagent');
 const fs = require('fs');
 const functionHandler = require(__dirname + '/../functionHandler.js');
 

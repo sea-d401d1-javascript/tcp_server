@@ -1,25 +1,23 @@
-var fs = require('fs');
-var net = require('net');
-var chai = require('chai');
-var chaiHTTP = require('chai-http');
-chai.use(chaiHTTP);
-var expect = require('chai').expect;
-var server = require(__dirname + "/../tcp-server.js");
-var testText = 'generating test text';
+const fs = require('fs');
+const net = require('net');
+const path = require('path');
+const chai = require('chai');
 
+const expect = require('chai').expect;
+const server = require(__dirname + '/../tcp-server.js');
 
-describe('tcp server', function() {
-  it('should connect to the tcp server', function(done) {
-    chai.request('localhost:3000')
-      .get('/')
-      .end(function(err, socket) {
-        expect(err).to.be.null;
-        expect(socket.text).to.have('Written for test yyy');
-      });
-    done();
+describe('logging tcp server', function() {
+  after(function() {
+    server.close();
+  });
+
+  it('should should return current time', function(done) {
+    var client = net.connect({port: 3000}, () => {
+      client.write('hello test\n');
+    });
+    client.on('data', (data) => {
+        expect(data.toString().includes('HTTP')).to.eql(true);
+        done();
+    });
   });
 });
-
-// describe('tcp server', function(done) {
-//   it()
-// });

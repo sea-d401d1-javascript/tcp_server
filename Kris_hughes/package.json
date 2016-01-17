@@ -1,0 +1,29 @@
+{
+  "name": "tcp_server_hw",
+  "version": "1.0.0",
+  "description": "Simple TCP server",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugheskr/tcp_server_hw.git"
+  },
+  "author": "Kris Hughes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugheskr/tcp_server_hw/issues"
+  },
+  "homepage": "https://github.com/hugheskr/tcp_server_hw#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.8.0"
+  }
+}
